@@ -1,0 +1,4 @@
+beautifulsoup4==4.8.2
+ipfshttpclient==0.7.0a1
+python-dotenv==0.13.0
+requests==2.23.0
