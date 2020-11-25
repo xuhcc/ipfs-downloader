@@ -33,7 +33,11 @@ def download(url: str, output_dir: str) -> str:
         downloaded = 0
         for link in data.find_all('a'):
             href = link.get('href')
-            if not href or '/ipfs/' not in href:
+            if (
+                not href
+                or '/ipfs/' not in href
+                or href == 'https://github.com/ipfs/dir-index-html/issues/'
+            ):
                 continue
             child_url = f'{ipfs_gateway}{href}'
             if child_url == url:
