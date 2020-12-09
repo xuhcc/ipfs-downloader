@@ -93,6 +93,9 @@ def main():
                 r'"([^"]+/ipfs/[A-Za-z0-9]+/?)[^"]*"',
                 html_file.read(),
             )
+        if not urls:
+            print('No IPFS URLs found.')
+            return
         for url in set(urls):
             process_url(url)
 
